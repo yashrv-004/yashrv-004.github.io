@@ -209,7 +209,7 @@ body {
     }
 
     .horizontal-video-item .video-container {
-        aspect-ratio: 16 / 9; /* Maintain proper horizontal video ratio on mobile */
+        aspect-ratio: 16 / 9 !important; /* Maintain proper horizontal video ratio on mobile */
         max-height: 50vh;
     }
 }

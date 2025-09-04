@@ -618,3 +618,17 @@ blockquote::after { right: -40px; bottom: -20px; }
     height: 100%;
     z-index: 0;
 }
+
+#video-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+.main-reel-wrapper video.is-loading {
+    opacity: 0;
+}

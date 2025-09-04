@@ -203,4 +203,18 @@ document.addEventListener('DOMContentLoaded', function() {
             quoteCanvas.height = quoteSection.offsetHeight;
         });
     }
+
+    // Video loader
+    const video = document.querySelector('.vertical-video');
+    const loader = document.getElementById('video-loader');
+
+    if (video && loader) {
+        video.classList.add('is-loading');
+
+        video.addEventListener('canplay', function() {
+            video.classList.remove('is-loading');
+            loader.style.display = 'none';
+            video.style.opacity = 1;
+        });
+    }
 });
