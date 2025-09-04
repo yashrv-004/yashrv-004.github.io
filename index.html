@@ -15,7 +15,7 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Work</a></li>
-                    <li class="dropdown">
+                    <!-- <li class="dropdown">
                         <a href="#" class="dropbtn">Other Skills &#9662;</a>
                         <div class="dropdown-content">
                             <a href="3d-modeling.html">3D Modeling</a>
@@ -23,7 +23,7 @@
                             <a href="color-grading.html">Color Grading</a>
                         </div>
                     </li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html">About</a></li> -->
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -32,11 +32,12 @@
 
     <main>
         <section id="hero-reel">
+            <canvas id="starfield"></canvas>
             <div class="container hero-content">
-                <h1>Hi, I'm a <span class="typing-effect"></span></h1>
+                <h1><span>Hi, I'm a&nbsp;</span><span class="typing-effect"></span></h1>
                 <p class="tagline">Crafting visually stunning narratives that captivate audiences.</p>
                 <div class="main-reel-wrapper">
-                    <video controls muted autoplay loop playsinline poster="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <video class="vertical-video" controls muted autoplay loop playsinline poster="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                         <source src="videos/Portfolio/Main.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -50,7 +51,7 @@
                 <div class="projects-grid">
                     <a href="musicvideos.html" class="project-card fade-in">
                         <div class="card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1511379938547-c1f694105059?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Music Video Project">
+                            <img src="videos/WebsitePictures/MainPage/music_videos_cover.png" alt="Music Video Project">
                             <div class="overlay">
                                 <h3>Music Videos</h3>
                                 <p>Rhythmic edits, dynamic visuals.</p>
@@ -60,7 +61,7 @@
 
                     <a href="influenceredits.html" class="project-card fade-in">
                         <div class="card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1628162629828-be90be5423f0?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Influencer Edits Project">
+                            <img src="videos/WebsitePictures/MainPage/Influencers_cover.png" alt="Influencer Edits Project">
                             <div class="overlay">
                                 <h3>Influencer Edits</h3>
                                 <p>Engaging content for social platforms.</p>
@@ -70,7 +71,7 @@
 
                     <a href="informativeedits.html" class="project-card fade-in">
                         <div class="card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1504384308090-c8990c74c95b?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Informative Edits Project">
+                            <img src="videos/WebsitePictures/MainPage/informative_cover.png" alt="Informative Edits Project">
                             <div class="overlay">
                                 <h3>Informative Edits</h3>
                                 <p>Clear, concise, impactful storytelling.</p>
@@ -82,8 +83,9 @@
         </section>
 
         <section id="cta-quote">
+            <canvas id="quote-starfield"></canvas>
             <div class="container">
-                <blockquote>"Every frame tells a story. I ensure yours is unforgettable."</blockquote>
+                <blockquote>Many can edit. Few can make you feel.</blockquote>
             </div>
         </section>
     </main>
@@ -92,9 +94,9 @@
         <div class="container">
             <p>&copy; 2025 Yash RV. All Rights Reserved.</p>
             <div class="social-links">
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">Instagram</a>
-                </div>
+                <a href="https://www.linkedin.com/in/yash-r-v-359344320/" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/yash4r4v/" target="_blank">Instagram</a>
+            </div>
         </div>
     </footer>
 

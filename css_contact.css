@@ -1,0 +1,189 @@
+/* General Body Styles for Contact Page */
+body {
+    background-image: none;
+    background-color: #0a0a0a;
+    color: #ccc;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Page Hero Section */
+.page-hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.page-title {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Contact Section Layout */
+.contact-section {
+    padding: 40px 0 80px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Left column smaller, right column larger */
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Direct Contact Styling */
+.direct-contact h2, .contact-form-wrapper h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.direct-contact p {
+    font-size: 1rem;
+    color: #a0a0a0;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.contact-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.contact-list li {
+    margin-bottom: 20px;
+}
+
+.contact-list a {
+    display: block;
+    padding: 15px;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.contact-list a:hover {
+    border-color: #007BFF;
+    background-color: rgba(0, 123, 255, 0.05);
+    transform: translateY(-3px);
+}
+
+.contact-list strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.contact-list span {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: #25D366;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DAE54;
+    transform: scale(1.03);
+    color: #fff;
+}
+
+/* Contact Form Styling */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #e0e0e0;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+#form-status {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+
+/* Fade-in Animations */
+.fade-in-up { opacity: 0; animation: fadeInUp 0.8s forwards; }
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); }
+}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title { font-size: 2.5rem; }
+}
