@@ -267,9 +267,9 @@ h3 { font-size: 1.8rem; }
 
 .main-reel-wrapper {
     width: 100%;
-    max-width: 400px; /* Fixed width */
+    max-width: 360px; /* Adjusted for better responsiveness */
     margin: 2rem auto;
-    aspect-ratio: 9/16; /* Fixed 9:16 aspect ratio */
+    aspect-ratio: 9/16;
     background-color: #000;
     border-radius: 12px;
     overflow: hidden;
@@ -331,7 +331,7 @@ h3 { font-size: 1.8rem; }
 
 /* ======== FEATURED PROJECTS GRID SECTION ======== */
 #featured-projects {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: rgba(26, 26, 26, 0.9); /* Slightly more opaque background */
     border-top: 1px solid var(--border-grey);
 }
@@ -484,11 +484,44 @@ blockquote::after { right: -40px; bottom: -20px; }
 
 /* ======== RESPONSIVE DESIGN ======== */
 @media (max-width: 992px) {
-    h1 { font-size: 3.5rem; }
+    h1 { font-size: 3.2rem; } /* Slightly smaller to prevent awkward wrapping */
     h2.section-title { font-size: 2.2rem; }
     .tagline { font-size: 1.2rem; }
-    .main-reel-wrapper { max-width: 90%; }
+    .main-reel-wrapper { max-width: 280px; } /* Smaller video on medium screens */
     blockquote { font-size: 1.8rem; }
+    
+    .hero-content h1 {
+        font-size: 3.2rem;
+        min-height: 100px; /* Adjust height for better line breaks */
+    }
+}
+
+/* Specific fix for medium screen widths where title breaks awkwardly */
+@media (min-width: 769px) and (max-width: 1280px) {
+    .hero-content h1 {
+        font-size: 2.8rem !important;
+        line-height: 1.2 !important;
+        min-height: 80px !important;
+    }
+    
+    .main-reel-wrapper {
+        max-width: 250px !important;
+    }
+}
+
+/* Additional fix for narrow medium screens */
+@media (min-width: 900px) and (max-width: 1100px) {
+    .hero-content h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.1 !important;
+    }
+}
+
+/* Fine-tune for specific problematic range */
+@media (min-width: 950px) and (max-width: 1050px) {
+    .hero-content h1 {
+        font-size: 2.3rem !important;
+    }
 }
 
 @media (max-width: 1024px) {

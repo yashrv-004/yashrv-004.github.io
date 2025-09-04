@@ -191,16 +191,16 @@ body {
     }
 
     .video-container {
-        aspect-ratio: 9 / 16 !important; /* Force proper aspect ratio on mobile */
-        max-height: 70vh !important; /* Prevent videos from being too tall */
-        width: 100% !important;
-        height: auto !important; /* Let height be calculated by aspect ratio */
+        width: 100%;
+        position: relative;
+        background-color: #000;
     }
 
     .video-container video {
         width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important; /* Ensure video fills container properly */
+        height: auto !important;
+        object-fit: contain !important;
+        display: block;
     }
 
     .horizontal-video-item {
