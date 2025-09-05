@@ -11,16 +11,23 @@
 <body>
 
     <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo">Yash RV</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Work</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <a href="index.html" class="logo">Yash RV</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Work</a></li>
+                 <li class="dropdown">
+                    <a href="#" class="dropbtn">Other Skills &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="web-design.html">Web Design</a>
+                        <a href="color-grading.html">Color Grading</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main>
         <section class="page-hero">
@@ -34,47 +41,51 @@
             <div class="container">
                 <!-- Comparison 1 -->
                 <div class="comparison-section fade-in-up">
-                    <h2>Enchanted Forest</h2>
+                    <h2>Moody Flower</h2>
                     <div class="comparison-container">
-                        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80&auto=format&fit=crop" alt="Before - Dull Forest" class="comparison-image image-before">
-                        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80&auto=format&fit=crop&cs=tinysrgb&hue=-20&sat=50&con=10" alt="After - Moody Forest" class="comparison-image image-after">
+                        <img src="videos/Color Grading/Flower_unedited.jpg" alt="Before - Flower (unedited)" class="comparison-image image-before">
+                        <img src="videos/Color Grading/Flower_edited.jpg" alt="After - Flower (edited)" class="comparison-image image-after">
                         <div class="slider-handle"></div>
                     </div>
+                    <p class="comparison-description">Richer greens and warm highlights add depth—turning a simple bloom into a moody, inviting frame.</p>
                 </div>
 
                 <!-- Comparison 2 -->
                 <div class="comparison-section fade-in-up delay-1">
-                    <h2>Cyberpunk Cityscape</h2>
+                    <h2>Street Walk</h2>
                     <div class="comparison-container">
-                        <img src="https://images.unsplash.com/photo-1544141511-28a15b50b25e?w=1200&q=80&auto=format&fit=crop" alt="Before - Flat City Night" class="comparison-image image-before">
-                        <img src="https://images.unsplash.com/photo-1544141511-28a15b50b25e?w=1200&q=80&auto=format&fit=crop&cs=tinysrgb&hue=200&sat=80&con=-5" alt="After - Vibrant City Night" class="comparison-image image-after">
+                        <img src="videos/Color Grading/MeWalking_unedited.JPG" alt="Before - Street Walk (unedited)" class="comparison-image image-before">
+                        <img src="videos/Color Grading/MeWalking_edited.jpg" alt="After - Street Walk (edited)" class="comparison-image image-after">
                         <div class="slider-handle"></div>
                     </div>
+                    <p class="comparison-description">Muted tones, soft contrast, masking turn a simple street into a cinematic moment.</p>
                 </div>
 
                 <!-- Comparison 3 -->
                 <div class="comparison-section fade-in-up delay-2">
-                    <h2>Golden Hour Portrait</h2>
+                    <h2>Urinal of Flowers</h2>
                     <div class="comparison-container">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1200&q=80&auto=format&fit=crop" alt="Before - Neutral Portrait" class="comparison-image image-before">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1200&q=80&auto=format&fit=crop&cs=tinysrgb&monochrome=333333&sepia=50&sat=-50" alt="After - Cinematic Portrait" class="comparison-image image-after">
+                        <img src="videos/Color Grading/tiolet_unedited.jpg" alt="Before - Bucket of Flowers (unedited)" class="comparison-image image-before">
+                        <img src="videos/Color Grading/tiolet_edited.jpg" alt="After - Bucket of Flowers (edited)" class="comparison-image image-after">
                         <div class="slider-handle"></div>
                     </div>
+                    <p class="comparison-description">Earthy tones and gentle contrast lift the whites—making even a urinal filled with flowers aesthetic.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2025 Yash RV. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/yash-r-v-359344320/" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com/yash4r4v/" target="_blank">Instagram</a>
-            </div>
+<footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2025 Yash RV. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yash-r-v-359344320/" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/yash4r4v/" target="_blank">Instagram</a>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <script src="color-grading.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
