@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design | Yash RV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css_musicvideos.css">
+    <link rel="stylesheet" href="web-design.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .website-item {
+            /* ... other styles ... */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .website-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .website-preview-container:hover .website-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======== HEADER (Reused from index.html for consistency) ======== -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Yash RV</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======== HERO SECTION FOR THIS PAGE ======== -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title fade-in-up">Web Design</h1>
+                <p class="page-subtitle fade-in-up delay-1">Crafting beautiful, functional, and user-friendly websites.</p>
+            </div>
+        </section>
+
+        <!-- ======== WEBSITE GALLERY ======== -->
+        <section class="website-gallery">
+            <div class="container">
+                <!-- Website 1 -->
+                <div class="website-item fade-in-up">
+                    <div class="website-preview-container">
+                        <a href="https://rumaledharmatrust.com" target="_blank">
+                            <img src="videos/WebsitePictures/MainPage/web-design-placeholder.png" alt="Rumale Dharma Trust Website Screenshot" class="website-screenshot" onerror="this.onerror=null;this.src='https://rumaledharmatrust.com/wp-content/uploads/2023/12/rumale-dharma-trust-logo.png';">
+                            <div class="website-overlay">
+                                <p>Visit Site</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="website-info">
+                        <h2>Rumale Dharma Trust</h2>
+                        <p>A clean and professional website for a non-profit organization, focusing on accessibility and clear communication of their mission and work. Built with a responsive design to ensure a great experience on all devices.</p>
+                        <a href="https://rumaledharmatrust.com" target="_blank" class="cta-button">View Live Site</a>
+                    </div>
+                </div>
+                
+                <!-- Add more website items here -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ======== FOOTER (Reused from index.html for consistency) ======== -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Yash RV. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/yash-r-v-359344320/" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/yash4r4v/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="webdesign.js"></script>
+</body>
+</html>
