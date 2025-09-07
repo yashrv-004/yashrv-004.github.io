@@ -160,10 +160,15 @@ h3 { font-size: 1.8rem; }
 .dropdown {
     position: relative;
     display: inline-block;
+    vertical-align: top;
 }
 
 .dropbtn {
     display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    line-height: 1.0; /* Match the line-height of other navigation items */
 }
 
 .dropdown-content {
@@ -453,6 +458,62 @@ blockquote::before, blockquote::after {
 }
 blockquote::before { left: -40px; top: -20px; }
 blockquote::after { right: -40px; bottom: -20px; }
+
+/* ======== FINAL CTA SECTION ======== */
+#final-cta {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #1a1a1a;
+    border-top: 1px solid var(--border-grey);
+}
+
+#final-cta .container {
+    position: relative;
+    z-index: 1;
+}
+
+#final-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#final-cta p {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #000000;
+    color: var(--text-lighter);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-grey);
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--left, -150%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 1s;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px) scale(1.05);
+    color: var(--text-lighter);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
 
 /* ======== FOOTER ======== */
 .main-footer {

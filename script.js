@@ -204,6 +204,65 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Final CTA starfield animation
+    const ctaCanvas = document.getElementById('cta-starfield');
+    if (ctaCanvas) {
+        const ctaCtx = ctaCanvas.getContext('2d');
+        const ctaSection = document.getElementById('final-cta');
+        ctaCanvas.width = window.innerWidth;
+        ctaCanvas.height = ctaSection.offsetHeight;
+
+        const ctaStars = [];
+        const numCtaStars = 150;
+
+        for (let i = 0; i < numCtaStars; i++) {
+            ctaStars.push({
+                x: Math.random() * ctaCanvas.width,
+                y: Math.random() * ctaCanvas.height,
+                radius: Math.random() * 1.5,
+                vx: Math.floor(Math.random() * 30) - 15,
+                vy: Math.floor(Math.random() * 30) - 15
+            });
+        }
+
+        function ctaDraw() {
+            ctaCtx.clearRect(0, 0, ctaCanvas.width, ctaCanvas.height);
+            ctaCtx.globalCompositeOperation = "lighter";
+
+            for (let i = 0, x = ctaStars.length; i < x; i++) {
+                const s = ctaStars[i];
+                ctaCtx.fillStyle = "#fff";
+                ctaCtx.beginPath();
+                ctaCtx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+                ctaCtx.fill();
+            }
+        }
+
+        function ctaUpdate() {
+            for (let i = 0, x = ctaStars.length; i < x; i++) {
+                const s = ctaStars[i];
+                s.x += s.vx / 60;
+                s.y += s.vy / 60;
+
+                if (s.x < 0 || s.x > ctaCanvas.width) s.vx = -s.vx;
+                if (s.y < 0 || s.y > ctaCanvas.height) s.vy = -s.vy;
+            }
+        }
+
+        function ctaTick() {
+            ctaDraw();
+            ctaUpdate();
+            requestAnimationFrame(ctaTick);
+        }
+
+        ctaTick();
+
+        window.addEventListener('resize', () => {
+            ctaCanvas.width = window.innerWidth;
+            ctaCanvas.height = ctaSection.offsetHeight;
+        });
+    }
+
     // Video loader
     const video = document.querySelector('.vertical-video');
     const loader = document.getElementById('video-loader');
@@ -217,4 +276,15 @@ document.addEventListener('DOMContentLoaded', function() {
             video.style.opacity = 1;
         });
     }
+
+    // CTA button sweep animation control
+    const ctaButton = document.querySelector('.cta-button');
+
+    ctaButton.addEventListener('mouseenter', () => {
+        ctaButton.style.setProperty('--left', '150%');
+    });
+
+    ctaButton.addEventListener('mouseleave', () => {
+        ctaButton.style.setProperty('--left', '-150%');
+    });
 });

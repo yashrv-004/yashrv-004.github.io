@@ -202,3 +202,6 @@ body {
         max-height: 60vh;
     }
 }
+
+/* Header alignment fix */
+.main-nav a, .dropbtn { line-height: 1.0; }

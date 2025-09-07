@@ -175,3 +175,6 @@ section.website-gallery .website-item:hover {
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
 }
+
+/* Header alignment fix */
+.main-nav a, .dropbtn { line-height: 1.0; }

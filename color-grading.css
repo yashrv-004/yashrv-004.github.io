@@ -192,3 +192,6 @@ body {
     /* Softer hover scale on mobile to prevent layout jump */
     .comparison-section:hover { transform: scale(1.03); }
 }
+
+/* Header alignment fix */
+.main-nav a, .dropbtn { line-height: 1.0; }
