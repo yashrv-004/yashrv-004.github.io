@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (responsiveVideo) {
             const isMobile = window.innerWidth <= 768;
             const desktopSrc = 'videos/All Videos/allthestars.mp4';
-            const mobileSrc = 'videos/All Videos/Mograph Music Video Edits/birdsofafeather.mp4';
+            const mobileSrc = 'videos/All Videos/allthestars.mp4';
             const currentSrc = responsiveVideo.querySelector('source').src;
             const targetSrc = isMobile ? mobileSrc : desktopSrc;
             
