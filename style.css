@@ -745,3 +745,122 @@ blockquote::after { right: -40px; bottom: -20px; }
 .main-reel-wrapper video.is-loading {
     opacity: 0;
 }
+
+/* ======== BRANDS CAROUSEL ======== */
+#brands-carousel {
+    padding: 40px 0;
+    background: #0d0d0d;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.brands-subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+    color: var(--text-light);
+    opacity: 0.85;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 50px;
+    animation: scroll-carousel 60s linear infinite;
+    width: fit-content;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.brand-logo-item {
+    flex-shrink: 0;
+    width: 120px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+    border: none;
+}
+
+.brand-logo-item:hover {
+    transform: scale(1.1);
+}
+
+.brand-logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: brightness(0.9);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.brand-logo-item:hover img {
+    filter: brightness(1.1);
+}
+
+@keyframes scroll-carousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    #brands-carousel {
+        padding: 30px 0;
+    }
+
+    .brands-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .carousel-track {
+        gap: 40px;
+        animation-duration: 45s;
+    }
+
+    .brand-logo-item {
+        width: 100px;
+        height: 60px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #brands-carousel {
+        padding: 25px 0;
+    }
+
+    .brands-subtitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .carousel-track {
+        gap: 30px;
+        animation-duration: 35s;
+    }
+
+    .brand-logo-item {
+        width: 80px;
+        height: 50px;
+        padding: 6px;
+    }
+}
