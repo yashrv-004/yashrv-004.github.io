@@ -236,6 +236,11 @@ h3 { font-size: 1.8rem; }
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+}
+
+.hero-content h1 > span {
+    display: inline-block;
 }
 
 /* --- Typing Effect Underline Fix --- */
@@ -243,13 +248,17 @@ h3 { font-size: 1.8rem; }
 /* Remove the old border-based underline */
 .hero-content h1 .typing-effect {
     border-bottom: none; 
+    display: inline-block;
+    min-width: 450px; /* Reserve space for longest word */
+    text-align: left;
 }
 
 /* Create a new underline using a pseudo-element */
 .hero-content h1 .typing-effect {
     position: relative;
     /* Add padding to make space for the underline */
-    padding-bottom: 8px; 
+    padding-bottom: 8px;
+    will-change: contents; /* Optimize for content changes */
 }
 
 .hero-content h1 .typing-effect::after {
@@ -260,6 +269,7 @@ h3 { font-size: 1.8rem; }
     width: 100%; /* Match the width of the text */
     height: 4px; /* Thickness of the underline */
     background-color: var(--accent-color);
+    will-change: width; /* Optimize for width changes */
 }
 
 .tagline {
@@ -308,7 +318,8 @@ h3 { font-size: 1.8rem; }
     
     .hero-content h1 .typing-effect {
         display: block;
-        width: auto;
+        width: 100%;
+        min-width: 280px;
         margin: 0 auto;
         text-align: center;
     }
@@ -565,6 +576,7 @@ blockquote::after { right: -40px; bottom: -20px; }
         display: inline-block;
         position: relative;
         text-align: center;
+        min-width: 350px;
     }
     
     .hero-content h1 .typing-effect::after {
@@ -606,7 +618,8 @@ blockquote::after { right: -40px; bottom: -20px; }
     
     .hero-content h1 .typing-effect {
         display: block;
-        width: auto;
+        width: 100%;
+        min-width: 280px;
         margin: 0 auto;
         text-align: center;
     }
