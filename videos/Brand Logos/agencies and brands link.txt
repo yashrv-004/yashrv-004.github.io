@@ -9,6 +9,6 @@ RawBin = Studio Urli
 Roll2Bowl = Fortimark
 Rootly = Studio Urli
 Shantae = Studio Urli
-UPF Eggs Logo = Studio Urli
+
 drkarenk = Fortimark
 
