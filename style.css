@@ -760,6 +760,16 @@ blockquote::after { right: -40px; bottom: -20px; }
     font-weight: 600;
     color: var(--text-light);
     opacity: 0.95;
+    position: relative;
+}
+
+.brands-subtitle::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-blue);
+    margin: 12px auto 0 auto;
 }
 
 .carousel-wrapper {
@@ -813,7 +823,7 @@ blockquote::after { right: -40px; bottom: -20px; }
 }
 
 .brands-disclaimer {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     text-align: center;
     margin-bottom: 30px;
     color: var(--text-light);
@@ -861,7 +871,7 @@ blockquote::after { right: -40px; bottom: -20px; }
     }
 
     .brands-disclaimer {
-        font-size: 0.65rem;
+        font-size: 0.55rem;
         margin-bottom: 25px;
         padding: 0 15px;
     }
@@ -897,7 +907,7 @@ blockquote::after { right: -40px; bottom: -20px; }
     }
 
     .brands-disclaimer {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         margin-bottom: 20px;
         padding: 0 10px;
     }
