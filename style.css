@@ -251,6 +251,7 @@ h3 { font-size: 1.8rem; }
     display: inline-block;
     min-width: 450px; /* Reserve space for longest word */
     text-align: left;
+    min-height: 1.2em; /* Reserve vertical space for text */
 }
 
 /* Create a new underline using a pseudo-element */
@@ -320,6 +321,7 @@ h3 { font-size: 1.8rem; }
         display: block;
         width: 100%;
         min-width: 280px;
+        min-height: 2.5em; /* Reserve space for 2 lines of text */
         margin: 0 auto;
         text-align: center;
     }
@@ -577,6 +579,7 @@ blockquote::after { right: -40px; bottom: -20px; }
         position: relative;
         text-align: center;
         min-width: 350px;
+        min-height: 2em; /* Reserve space for 2 lines of text on tablets */
     }
     
     .hero-content h1 .typing-effect::after {
@@ -620,6 +623,7 @@ blockquote::after { right: -40px; bottom: -20px; }
         display: block;
         width: 100%;
         min-width: 280px;
+        min-height: 2.5em; /* Reserve space for 2 lines of text */
         margin: 0 auto;
         text-align: center;
     }
