@@ -229,7 +229,7 @@ h3 { font-size: 1.8rem; }
 
 .hero-content h1 {
     font-size: 4.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     color: var(--primary-text);
     text-shadow: none; /* Remove previous text shadow */
     min-height: 80px; /* Fixed height to prevent jumping */
