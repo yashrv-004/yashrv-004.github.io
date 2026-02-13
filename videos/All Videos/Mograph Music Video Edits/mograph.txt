@@ -1,3 +1,0 @@
-in this case, all buttons should lead to same link = https://www.instagram.com/kesis_yamoto/
-
-the button text should come as = View more like this
