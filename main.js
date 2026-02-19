@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch and insert a component
     const loadComponent = (componentPath, placeholderId) => {
         fetch(componentPath)
@@ -53,11 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Listen for user activity
+    // Listen for user activity - Removed mousedown/touchstart to prevent header popping up on clicks
     document.addEventListener('mousemove', resetInactivityTimer);
-    document.addEventListener('mousedown', resetInactivityTimer);
     document.addEventListener('keypress', resetInactivityTimer);
     document.addEventListener('scroll', resetInactivityTimer);
-    document.addEventListener('touchstart', resetInactivityTimer);
 
     // Start the inactivity timer
     resetInactivityTimer();

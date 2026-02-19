@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option 4 Mockup - Strong Visual Breaks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+        }
+
+        /* Category Blocks with Alternating Backgrounds */
+        .category-block {
+            padding: 120px 40px 100px;
+            position: relative;
+        }
+
+        .category-block[data-theme="dark-1"] {
+            background: #0a0a0a;
+        }
+
+        .category-block[data-theme="dark-2"] {
+            background: #0d0d0d;
+        }
+
+        .category-block[data-theme="dark-3"] {
+            background: #101010;
+        }
+
+        .category-block[data-theme="dark-4"] {
+            background: #0b0b0b;
+        }
+
+        .category-block[data-theme="dark-5"] {
+            background: #0e0e0e;
+        }
+
+        .category-block[data-theme="dark-6"] {
+            background: #0c0c0c;
+        }
+
+        /* Massive Category Headers */
+        .category-header {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .category-header h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .category-subtext {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .video-count {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-placeholder {
+            aspect-ratio: 1/1;
+            background: #1a1a1a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .video-placeholder::before {
+            content: '▶';
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .video-placeholder.horizontal {
+            aspect-ratio: 16/9;
+        }
+
+        .agency-credit {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            font-size: 0.7rem;
+            color: #555;
+            font-style: italic;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        /* Dramatic Gradient Dividers */
+        .category-divider {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gradient-start), var(--gradient-end), transparent);
+            margin: 0;
+        }
+
+        .divider-purple {
+            --gradient-start: #8b5cf6;
+            --gradient-end: #3b82f6;
+        }
+
+        .divider-blue {
+            --gradient-start: #3b82f6;
+            --gradient-end: #06b6d4;
+        }
+
+        .divider-teal {
+            --gradient-start: #06b6d4;
+            --gradient-end: #10b981;
+        }
+
+        .divider-green {
+            --gradient-start: #10b981;
+            --gradient-end: #f59e0b;
+        }
+
+        .divider-orange {
+            --gradient-start: #f59e0b;
+            --gradient-end: #ef4444;
+        }
+
+        /* Spacing */
+        .visual-break {
+            height: 150px;
+            background: #000;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .category-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .category-block {
+                padding: 80px 30px 80px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-header h2 {
+                font-size: 2rem;
+            }
+
+            .category-block {
+                padding: 60px 20px 60px;
+            }
+
+            .visual-break {
+                height: 80px;
+            }
+        }
+
+        /* Sticky Nav (optional preview) */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .sticky-nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .sticky-nav a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-nav a:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Optional Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="container">
+            <a href="#brand">Brand Motion</a>
+            <a href="#clean">Clean & Conceptual</a>
+            <a href="#mograph">Mograph Lyric</a>
+            <a href="#product">Product Promos</a>
+            <a href="#rhythm">Rhythm & Beat</a>
+            <a href="#social">Social Creators</a>
+        </div>
+    </nav>
+
+    <!-- Category 1: Brand Motion Graphics -->
+    <section id="brand" class="category-block" data-theme="dark-1">
+        <div class="category-header">
+            <h2>BRAND MOTION GRAPHICS</h2>
+            <p class="category-subtext">Dynamic Brand Storytelling</p>
+            <span class="video-count">3 videos</span>
+        </div>
+        <div class="video-grid">
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider divider-purple"></div>
+    <div class="visual-break"></div>
+
+    <!-- Category 2: Clean & Conceptual -->
+    <section id="clean" class="category-block" data-theme="dark-2">
+        <div class="category-header">
+            <h2>CLEAN & CONCEPTUAL</h2>
+            <p class="category-subtext">Minimalist Visual Design</p>
+            <span class="video-count">2 videos</span>
+        </div>
+        <div class="video-grid">
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider divider-blue"></div>
+    <div class="visual-break"></div>
+
+    <!-- Category 3: Mograph Lyric Edits -->
+    <section id="mograph" class="category-block" data-theme="dark-3">
+        <div class="category-header">
+            <h2>MOGRAPH LYRIC EDITS</h2>
+            <p class="category-subtext">Typography Meets Music</p>
+            <span class="video-count">4 videos</span>
+        </div>
+        <div class="video-grid">
+            <div class="video-placeholder horizontal"></div>
+            <div class="video-placeholder"></div>
+            <div class="video-placeholder"></div>
+            <div class="video-placeholder"></div>
+        </div>
+    </section>
+
+    <div class="category-divider divider-teal"></div>
+    <div class="visual-break"></div>
+
+    <!-- Category 4: Product Promos -->
+    <section id="product" class="category-block" data-theme="dark-4">
+        <div class="category-header">
+            <h2>PRODUCT PROMOS</h2>
+            <p class="category-subtext">Commercial Excellence</p>
+            <span class="video-count">3 videos</span>
+        </div>
+        <div class="video-grid">
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider divider-green"></div>
+    <div class="visual-break"></div>
+
+    <!-- Category 5: Rhythm & Beat Sync -->
+    <section id="rhythm" class="category-block" data-theme="dark-5">
+        <div class="category-header">
+            <h2>RHYTHM & BEAT SYNC</h2>
+            <p class="category-subtext">Precision Cut Editing</p>
+            <span class="video-count">2 videos</span>
+        </div>
+        <div class="video-grid">
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+            <div class="video-placeholder">
+                <div class="agency-credit">Edited Via Studio Urli</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider divider-orange"></div>
+    <div class="visual-break"></div>
+
+    <!-- Category 6: Social Creators -->
+    <section id="social" class="category-block" data-theme="dark-6">
+        <div class="category-header">
+            <h2>SOCIAL CREATORS</h2>
+            <p class="category-subtext">Viral Content Creation</p>
+            <span class="video-count">4 videos</span>
+        </div>
+        <div class="video-grid">
+            <div class="video-placeholder"></div>
+            <div class="video-placeholder horizontal"></div>
+            <div class="video-placeholder horizontal"></div>
+            <div class="video-placeholder"></div>
+        </div>
+    </section>
+
+    <div style="height: 200px; background: #000;"></div>
+
+</body>
+
+</html>

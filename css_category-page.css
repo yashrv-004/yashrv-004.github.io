@@ -1,0 +1,523 @@
+/* General Body Styles */
+body {
+    background-image: none;
+    background-color: #000;
+    color: #ccc;
+    font-family: 'Inter', sans-serif;
+}
+
+.main-header,
+.main-footer {
+    background-color: transparent;
+}
+
+.main-nav a,
+.dropbtn {
+    line-height: 1.0;
+}
+
+/* Page Hero Section */
+.page-hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.page-title {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   Category Blocks with Alternating Backgrounds
+   ========================================= */
+.category-block {
+    padding: 40px 40px 100px;
+    /* Reduced top padding from 120px to 40px for better nav scroll */
+    position: relative;
+}
+
+.category-block[data-theme="dark-1"] {
+    background: #0a0a0a;
+}
+
+.category-block[data-theme="dark-2"] {
+    background: #0d0d0d;
+}
+
+.category-block[data-theme="dark-3"] {
+    background: #101010;
+}
+
+.category-block[data-theme="dark-4"] {
+    background: #0b0b0b;
+}
+
+.category-block[data-theme="dark-5"] {
+    background: #0e0e0e;
+}
+
+.category-block[data-theme="dark-6"] {
+    background: #0c0c0c;
+}
+
+/* Massive Category Headers */
+.category-header {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.category-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.category-subtext {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.video-count {
+    display: none;
+    /* User requested removal */
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* Video Gallery - Grid Layout */
+.video-gallery .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    /* Restored gap for clean separation */
+    align-items: start;
+    /* PREVENTS STRETCHING: Short items won't have black space below them */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Individual Video Item Styling */
+.video-item {
+    background-color: #000;
+    border-radius: 16px;
+    /* Restored rounded corners */
+    overflow: hidden;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    /* Modern shadow */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Subtle border */
+}
+
+.video-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.video-container {
+    width: 100%;
+    position: relative;
+    background-color: #000;
+}
+
+/* Square video items (1:1) - ONLY 2 VIDEOS */
+.square-video-item {
+    align-self: center;
+    /* Center significantly shorter square card */
+}
+
+.square-video-item.top-aligned {
+    align-self: start;
+    /* Override for top alignment if requested */
+}
+
+.square-video-item .video-container {
+    aspect-ratio: 1 / 1;
+}
+
+/* Vertical video items (9:16) - Most videos */
+.vertical-video-item .video-container {
+    aspect-ratio: 9 / 16;
+}
+
+/* Horizontal video items (16:9) - 3 videos */
+.horizontal-video-item {
+    grid-column: span 3;
+    /* Span full width to avoid black space */
+}
+
+.horizontal-video-item .video-container {
+    aspect-ratio: 16 / 9;
+}
+
+.video-container .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-container:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-container .video-overlay p {
+    font-size: 0.9rem;
+    padding: 10px;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    padding: 8px 16px;
+    backdrop-filter: blur(4px);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* CRITICAL: Removes the small 4px gap below video */
+}
+
+.video-info {
+    padding: 12px 24px 20px;
+    /* Reduced top padding to bring credit closer */
+    background: #111;
+    /* Slightly lighter background for contrast */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.video-info h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.video-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #a0a0a0;
+}
+
+/* Agency Credit */
+.agency-credit {
+    display: block;
+    margin-bottom: 2px;
+    /* Even tighter spacing to header */
+    font-size: 0.75rem;
+    color: #6b7280;
+    /* Soft gray */
+    font-weight: 400;
+    text-transform: none;
+    /* No caps */
+    font-style: italic;
+    /* Italicized */
+    text-align: right;
+    /* Right aligned */
+    line-height: 1;
+    /* Ensure line-height doesn't add gap */
+}
+
+/* Dramatic Gradient Dividers */
+.category-divider {
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gradient-start), var(--gradient-end), transparent);
+    margin: 0;
+}
+
+.gradient-purple {
+    --gradient-start: #8b5cf6;
+    --gradient-end: #3b82f6;
+}
+
+.gradient-blue {
+    --gradient-start: #3b82f6;
+    --gradient-end: #06b6d4;
+}
+
+.gradient-teal {
+    --gradient-start: #06b6d4;
+    --gradient-end: #10b981;
+}
+
+.gradient-green {
+    --gradient-start: #10b981;
+    --gradient-end: #f59e0b;
+}
+
+.gradient-orange {
+    --gradient-start: #f59e0b;
+    --gradient-end: #ef4444;
+}
+
+/* Fade-in Animations */
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+/* Social Creators & Mograph Layout: Center Stack */
+#social-creators .social-creators-stack,
+#mograph-lyric-edits .mograph-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-self: center;
+    /* Centers the stack vertically relative to side columns */
+}
+
+/* Ensure items inside stack stretch full width (override global square centering) */
+.mograph-stack .video-item,
+.social-creators-stack .video-item {
+    width: 100%;
+    align-self: stretch !important;
+}
+
+/* Helper Class: Desktop Only (Hidden on Mobile/Tablet) */
+@media (max-width: 1024px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .video-gallery .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        /* Restored gap for tablet */
+    }
+
+    .horizontal-video-item {
+        grid-column: span 2;
+        /* Full width on tablet (2-column grid) */
+    }
+
+    .category-block {
+        padding: 80px 30px;
+    }
+
+    .category-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .page-hero {
+        padding: 40px 15px 20px;
+    }
+
+    .video-gallery .container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        /* Restored gap for mobile */
+        padding: 0 40px;
+        /* Increased padding to reduce video size */
+    }
+
+    .horizontal-video-item {
+        grid-column: span 1;
+        /* Single column on mobile (already full width) */
+    }
+
+    .category-block {
+        padding: 60px 20px;
+    }
+
+    .category-title {
+        font-size: 2rem;
+    }
+
+    .category-subtext {
+        font-size: 0.85rem;
+    }
+
+    .video-count {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+    }
+
+    .agency-credit {
+        font-size: 0.65rem;
+    }
+}
+
+/* =========================================
+   Sticky Category Navigation
+   (Migrated from inline HTML)
+   ========================================= */
+.category-nav {
+    position: sticky;
+    top: 0;
+    /* Default: Sticks to very top when header is HIDDEN */
+    z-index: 999;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    overflow-x: auto;
+    scrollbar-width: none;
+    transition: top 0.3s ease;
+    /* Smooth transition for position change */
+}
+
+/* When header is VISIBLE (scrolling up), push nav down */
+body.header-visible .category-nav {
+    top: var(--header-height-dynamic, 65px);
+    /* Dynamic: Matches exact header height */
+}
+
+@media (max-width: 640px) {
+    body.header-visible .category-nav {
+        top: 160px;
+        /* Mobile: User confirmed 160px works */
+    }
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-nav .container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.category-nav a {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #999;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.category-nav a:hover,
+.category-nav a.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 640px) {
+    .category-nav .container {
+        justify-content: flex-start;
+        padding: 0 16px;
+    }
+
+    .category-nav a {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+}
+
+/* =========================================
+   Back to Top & HTML Basics
+   (Migrated from inline HTML)
+   ========================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
