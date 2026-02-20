@@ -265,6 +265,13 @@ ul {
     border-color: #60C4A4;
 }
 
+.badge-photoshop {
+    --glow-color: #31A8FF;
+    background-color: #31A8FF;
+    color: #001e36;
+    border-color: #31A8FF;
+}
+
 .cta-block {
     margin: 70px 0 40px;
     padding: 35px;
@@ -471,6 +478,10 @@ body {
     .badge {
         padding: 10px 16px;
         font-size: 0.85rem;
+    }
+
+    .hide-on-mobile {
+        display: none !important;
     }
 }
 

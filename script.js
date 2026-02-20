@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Auto-hide header on scroll (mobile only)
     let lastScrollTop = 0;
     const header = document.querySelector('.main-header');
-    
+
     function handleScroll() {
         // Apply auto-hide on all screen sizes (both mobile and desktop)
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         if (scrollTop > lastScrollTop && scrollTop > 100) {
             // Scrolling down - hide header
             header.classList.add('header-hidden');
@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Scrolling up - show header
             header.classList.remove('header-hidden');
         }
-        
+
         lastScrollTop = scrollTop;
     }
-    
+
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleScroll);
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function type() {
         const currentWord = words[wordIndex];
-        
+
         if (isDeleting) {
             typingElement.textContent = currentWord.substring(0, letterIndex - 1);
             letterIndex--;
@@ -85,6 +85,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     projectCards.forEach(card => {
         observer.observe(card);
+        // Apply per-card gradient colours from data attributes
+        const gradTop = card.dataset.gradTop;
+        const gradBot = card.dataset.gradBot;
+        if (gradTop) card.style.setProperty('--grad-top', gradTop);
+        if (gradBot) card.style.setProperty('--grad-bot', gradBot);
+        // Use the top colour as the accent for the hover glow
+        if (gradTop) card.style.setProperty('--accent', gradTop);
     });
 
     // Starfield animation
@@ -154,15 +161,15 @@ document.addEventListener('DOMContentLoaded', function() {
         quoteCanvas.height = quoteSection.offsetHeight;
 
         const quoteStars = [];
-        const numQuoteStars = 150;
+        const numQuoteStars = 112;
 
         for (let i = 0; i < numQuoteStars; i++) {
             quoteStars.push({
                 x: Math.random() * quoteCanvas.width,
                 y: Math.random() * quoteCanvas.height,
                 radius: Math.random() * 1.5,
-                vx: Math.floor(Math.random() * 30) - 15,
-                vy: Math.floor(Math.random() * 30) - 15
+                vx: Math.floor(Math.random() * 21) - 10,
+                vy: Math.floor(Math.random() * 21) - 10
             });
         }
 
@@ -270,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (video && loader) {
         video.classList.add('is-loading');
 
-        video.addEventListener('canplay', function() {
+        video.addEventListener('canplay', function () {
             video.classList.remove('is-loading');
             loader.style.display = 'none';
             video.style.opacity = 1;

@@ -391,46 +391,90 @@ h3 {
 #featured-projects {
     padding: 40px 0 100px 0;
     background-color: rgba(26, 26, 26, 0.9);
-    /* Slightly more opaque background */
     border-top: 1px solid var(--border-grey);
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    /* Slightly larger min-width */
-    gap: 40px;
-    /* More spacing */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
 }
 
+/* ---- Project Card (desktop rich tiles) ---- */
 .project-card {
-    background-color: var(--card-bg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
+    --accent: #8b5cf6;
+    background: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
     overflow: visible;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    min-height: 200px;
-    text-align: center;
-    transform: scale
+    gap: 18px;
+    padding: 28px 24px;
+    min-height: 120px;
+    text-decoration: none;
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease;
+    box-shadow:
+        0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent),
+        0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
 .project-card:hover {
-    transform: scale(1.08) !important;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6) !important;
-    z-index: 10 !important;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow:
+        0 0 0 1px color-mix(in srgb, var(--accent) 50%, transparent),
+        0 0 18px color-mix(in srgb, var(--accent) 12%, transparent),
+        0 12px 36px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+/* Per-card colours applied via JS from data-grad-top/bot attributes */
+
+/* Card body */
+.card-body {
+    flex: 1;
+    min-width: 0;
 }
 
 .project-card h3 {
     color: var(--text-lighter);
-    font-size: 1.8rem;
-    margin: 0;
+    font-size: 1.15rem;
+    margin: 0 0 5px 0;
     font-weight: 600;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+    color: #fff;
+}
+
+.card-desc {
+    font-size: 0.82rem;
+    color: #888;
+    margin: 0;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .card-desc {
+    color: #aaa;
+}
+
+/* Arrow indicator */
+.card-arrow {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+    transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.project-card:hover .card-arrow {
+    transform: translateX(5px);
+    color: var(--accent);
 }
 
 /* Highlight Badge Styling */
@@ -725,52 +769,35 @@ blockquote::after {
 
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 14px;
     }
 
     .project-card {
-        min-height: 80px;
-        padding: 18px 50px 18px 18px;
-        justify-content: flex-start;
-        text-align: left;
-        border-radius: 8px;
-        background: #121212;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        position: relative;
+        min-height: 72px;
+        padding: 16px 18px;
+        gap: 14px;
     }
 
-    .project-card::after {
-        content: '›';
-        position: absolute;
-        right: 18px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 2rem;
-        color: rgba(255, 255, 255, 0.4);
-        font-weight: 300;
-        transition: all 0.3s ease;
-    }
-
-    .project-card:active::after {
-        color: rgba(255, 255, 255, 0.7);
-        right: 14px;
+    .card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        border-radius: 10px;
     }
 
     .project-card h3 {
-        font-size: 1.1rem;
-        line-height: 1.4;
-        margin-right: 0;
-        font-weight: 500;
-        padding-right: 40px;
+        font-size: 1rem;
+    }
+
+    .card-desc {
+        font-size: 0.78rem;
     }
 
     .project-card .highlight-badge {
-        top: 6px;
-        right: 12px;
+        top: -9px;
+        right: 10px;
         font-size: 0.55rem;
         padding: 3px 7px;
-        transform: rotate(3deg);
     }
 }
 
